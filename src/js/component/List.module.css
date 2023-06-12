@@ -1,4 +1,7 @@
-
+.count{
+    display: flex;
+    justify-content: space-between;
+}
 
 .li{
     display: flex;
