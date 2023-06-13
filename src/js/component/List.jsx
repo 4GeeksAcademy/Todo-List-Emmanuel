@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styles from "./List.module.css";
 
 const List = () => {
     const [inputValue, setInputValue] = useState("");
     const [items, setItems] = useState(["No tasks, add a task"]);
     const [count, setCount] = useState(0);
+    
     
 
     const addItem = () => {
@@ -14,14 +15,18 @@ const List = () => {
 
             setItems([...items, inputValue]);
             setInputValue("");
+            
+            
         }
         if(inputValue == ""){
             alert("Enter a valid task");
-        }
-        if (items.length =! items.length) setCount(count+1)
-       
+        }  
+        
     };
   
+    useEffect(() => {
+        setCount(items.length);
+}, [items]);
 
     const handlePress = (e) =>{
         if(e.key === "Enter"){
@@ -35,11 +40,12 @@ const List = () => {
     const deleteValue = (index) => {
         setItems((prevItems) => prevItems.filter((_, i) => i !== index));
       };
+      
 
     
 	return (
       
-        <div>
+        <div className={styles.app}>
             <li className={`list-group-item ${styles.li}`} >  <div className={` ${styles.count}`}>Cantidad de tareas: </div><div>{count}</div>  </li>
                 
 
