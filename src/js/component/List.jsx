@@ -46,7 +46,7 @@ const List = () => {
 	return (
       
         <div className={styles.app}>
-            <li className={`list-group-item ${styles.li}`} >  <div className={` ${styles.count}`}>Cantidad de tareas: </div><div>{count}</div>  </li>
+            <li className={`list-group-item ${styles.li}`} >  <div className={` ${styles.count}`}>Number of tasks: </div><div>{count}</div>  </li>
                 
 
             <input placeholder="Write your task" onKeyDown={(e) => handlePress(e)} type="text" value= {inputValue} onChange={(e)=> setInputValue(e.target.value)}/>

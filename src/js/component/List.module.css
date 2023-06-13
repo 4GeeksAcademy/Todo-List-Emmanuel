@@ -12,9 +12,8 @@
     color: white;
     max-width: 500px;
     position: relative;
-    
     height: 100%;
-    overflow: scroll; /* Oculta cualquier contenido que se desborde */
+    overflow: scroll; 
    
     
 }
@@ -45,7 +44,7 @@ button, input {
     width: 100%;
 }
 .app{
-   
+   border-radius: 10px;
     width: 500px;
     max-height: 350px;
     overflow-y: scroll;
@@ -59,3 +58,20 @@ button, input {
     width: 0; /* Ancho de la barra de desplazamiento */
     background-color: transparent; /* Color de fondo de la barra de desplazamiento */
   }
+
+  input::placeholder {
+     color: white; 
+    }
+
+  
+input:hover, button:hover{
+    
+    -webkit-animation: pulseYellow 2s linear 0s infinite;
+    }
+
+    
+    @-webkit-keyframes pulseYellow {
+        0% { box-shadow:0 0 16px #ffa600, inset 0 0 16px #ffae00; }
+        50% { box-shadow:0 0 32px #ffbb00, inset 0 0 28px #ffc400; }
+        100% { box-shadow:0 0 16px #ff8800, inset 0 0 16px #ff8800; }
+      }
